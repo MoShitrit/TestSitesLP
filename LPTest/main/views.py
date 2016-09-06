@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from time import strftime
+# from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('My first Django App!')
+    return render(request, "main/home.html", {'date': strftime("%A, %B %d %Y")})
