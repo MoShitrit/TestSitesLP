@@ -3,20 +3,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- BEGIN LivePerson Monitor. -->
+    <script type="text/javascript" src="/static/tags/{{ farm }}/{{ site }}.js"></script>
+    <!-- END LivePerson Monitor. -->
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'styles.css' %}"/>
-    <title>LivePerson Test Sites</title>
+    <title>{{ title }}</title>
 </head>
 <body>
 <header>
-    <h1>LivePerson Test Sites</h1>
+    <h1>{{ title }}</h1>
 </header>
-    {% include "main/menu.html" %}
+{% include "main/menu.html" %}
 
 <section>
     <p>
         {{ date }}<br/><br/>
-        This website has dedicated pages for all of my test sites in LivePerson
+        SiteID: {{ site }}
         <br/>
         ---------------------------------------------------------------------
     </p>
