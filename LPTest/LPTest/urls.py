@@ -55,6 +55,9 @@ def purge_tags():
     """
     for farm in ['ga', 'uk', 'apac', 'alpha']:
         tags_path = '{0}/static/tags/{1}'.format(sys.path[0], farm)
+        if not os.path.exists(tags_path):
+            os.makedirs(tags_path)
+
         for f in os.listdir(tags_path):
             file_path = os.path.join(tags_path, f)
             os.unlink(file_path)
