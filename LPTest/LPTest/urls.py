@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from main.views import home, site
-from sites.models import GASite, UKSite, APACSite, ALPHASite
+from sites.models import GA, UK, APAC, ALPHA
 import sys
 import os
 
@@ -29,8 +29,8 @@ urlpatterns = [
 
 
 def append_to_urlpatterns(farm):
-    urlpatterns.append(url(r'^{0}$'.format(site_id.id), site, {'account': site_id.id, 'farm': str.upper(farm),
-                                                               'is_legacy': site_id.legacy}))
+    urlpatterns.append(url(r'^{0}/{1}$'.format(farm, site_id.id), site, {'account': site_id.id, 'farm': str.upper(farm),
+                                                                         'is_legacy': site_id.legacy}))
 
 
 def generate_tags(farm, site_object):
@@ -68,18 +68,18 @@ purge_tags()
 
 # Iterate over all tables (by farm), get siteids for URL generation and tags for js file generation
 
-for site_id in GASite.objects.all():
+for site_id in GA.objects.all():
     append_to_urlpatterns('GA')
     generate_tags('ga', site_id)
 
-for site_id in UKSite.objects.all():
+for site_id in UK.objects.all():
     append_to_urlpatterns('UK')
     generate_tags('uk', site_id)
 
-for site_id in APACSite.objects.all():
+for site_id in APAC.objects.all():
     append_to_urlpatterns('APAC')
     generate_tags('apac', site_id)
 
-for site_id in ALPHASite.objects.all():
+for site_id in ALPHA.objects.all():
     append_to_urlpatterns('ALPHA')
     generate_tags('alpha', site_id)

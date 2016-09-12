@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class GASite(models.Model):
+class GA(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     name = models.CharField(max_length=100)
     site_tag = models.CharField(max_length=10000)
@@ -14,7 +14,7 @@ class GASite(models.Model):
         return '{0}  [{1}]'.format(self.id, self.name)
 
 
-class ALPHASite(models.Model):
+class ALPHA(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     name = models.CharField(max_length=100)
     site_tag = models.CharField(max_length=10000)
@@ -25,7 +25,7 @@ class ALPHASite(models.Model):
         return '{0}  [{1}]'.format(self.id, self.name)
 
 
-class UKSite(models.Model):
+class UK(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     name = models.CharField(max_length=100)
     site_tag = models.CharField(max_length=10000)
@@ -36,7 +36,7 @@ class UKSite(models.Model):
         return '{0}  [{1}]'.format(self.id, self.name)
 
 
-class APACSite(models.Model):
+class APAC(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     name = models.CharField(max_length=100)
     site_tag = models.CharField(max_length=10000)

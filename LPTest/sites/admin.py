@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import GASite, UKSite, ALPHASite, APACSite
+from .models import GA, UK, ALPHA, APAC
 
-admin.site.register(ALPHASite)
-admin.site.register(GASite)
-admin.site.register(UKSite)
-admin.site.register(APACSite)
+admin.site.register(ALPHA)
+admin.site.register(GA)
+admin.site.register(UK)
+admin.site.register(APAC)
 

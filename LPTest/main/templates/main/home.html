@@ -1,28 +1,4 @@
-{% load staticfiles%}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
-    <title>LivePerson Test Sites</title>
-</head>
-<body>
-<header>
-    <h1>LivePerson Test Sites</h1>
-</header>
-    {% include "main/menu.html" %}
-
-<section>
-    <p>
-        {{ date }}<br/><br/>
+{% extends "base.html" %}
+{% block content %}
         This website has dedicated pages for all of my test sites in LivePerson
-        <br/>
-        ---------------------------------------------------------------------
-    </p>
-</section>
-<footer>
-    <div id="copyright">&copy; 2016 Moshe Shitrit. All rights reserved.</div>
-</footer>
-</body>
-</html>
+{% endblock%}
